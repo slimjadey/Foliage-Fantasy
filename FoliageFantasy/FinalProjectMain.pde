@@ -15,5 +15,5 @@ void draw()
 void drawPotatoe()
 {
   fill(#23FF32);
-  circle(50,50,100);
+  circle(150,150,100);
 }

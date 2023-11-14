@@ -1,6 +1,6 @@
 void draw()
 {
   background(0);
-  fill(255);
+  fill(140);
   rect(0,0,100,100);
 }

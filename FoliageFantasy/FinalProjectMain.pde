@@ -14,6 +14,6 @@ void draw()
 
 void drawPotatoe()
 {
-  fill(#23FF32);
-  circle(150,150,100);
+  fill(#dc6200);
+  ellipse(150,150,150,100);
 }

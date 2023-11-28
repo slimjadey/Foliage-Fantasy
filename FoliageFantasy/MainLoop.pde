@@ -24,13 +24,14 @@ void handleDrawing()
     camera.pushCameraMatrix();
     for(int i = 0;i < gameDrawables.size();i++)
     {
-        // We automatically handle gameobject position and rotation here
         pushMatrix();
 
+        // We automatically handle object position and rotation before per gameobject draw logic
         GameDrawable drawable = gameDrawables.get(i);
         translate(drawable.x, drawable.y);
         rotate(drawable.rotation);
 
+        // object-specific draw logic
         drawable.draw();
 
         popMatrix();
@@ -42,6 +43,5 @@ void drawDebugUI()
 {
     textSize(15);
     fill(0);
-    println(frameRate);
     text("fps: " + frameRate, 2, 15);
 }

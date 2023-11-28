@@ -16,5 +16,7 @@ void mouseWheel(MouseEvent event) {
 void mouseClicked() {
     // Place trees when clicking
     PVector result = camera.screenToWorld(mouseX, mouseY);
-    gameDrawables.add(new Tree(result.x, result.y, random(-1.0, 1.0)));
+    Tree tree = new Tree(result.x, result.y, random(-0.1, 0.1));
+    gameDrawables.add(tree);
+    gameObjects.add(tree);
 }

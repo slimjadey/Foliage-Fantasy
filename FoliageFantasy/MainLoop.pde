@@ -5,6 +5,7 @@ void draw()
 
     handleUpdate();
     handleDrawing();
+    drawDebugUI();
 
     previousTime = currentTime;
 }
@@ -23,6 +24,7 @@ void handleDrawing()
     camera.pushCameraMatrix();
     for(int i = 0;i < gameDrawables.size();i++)
     {
+        // We automatically handle gameobject position and rotation here
         pushMatrix();
 
         GameDrawable drawable = gameDrawables.get(i);
@@ -34,4 +36,12 @@ void handleDrawing()
         popMatrix();
     }
     camera.popCameraMatrix();
+}
+
+void drawDebugUI()
+{
+    textSize(15);
+    fill(0);
+    println(frameRate);
+    text("fps: " + frameRate, 2, 15);
 }

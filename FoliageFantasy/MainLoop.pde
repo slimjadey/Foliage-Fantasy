@@ -5,6 +5,7 @@ void draw()
 
     handleUpdate();
     handleDrawing();
+    drawUI();
     drawDebugUI();
 
     previousTime = currentTime;

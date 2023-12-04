@@ -1,6 +1,7 @@
 PImage shovel;
 PImage water;
 PImage plant;
+PImage background;
 
 color dirt;
 color buttonS;
@@ -9,8 +10,7 @@ color buttonP;
 
 void setup() {
   size(750, 750);
-  background(255);
-
+  
   //Colors
   dirt = color(155, 118, 83);
   buttonS = color(255, 0);
@@ -21,16 +21,21 @@ void setup() {
   shovel = loadImage("Shovel.jpg");
   water = loadImage("Water.jpg");
   plant = loadImage("Plant.jpg");
+  background = loadImage("Background.png");
+  
+  background(background);
 }
 
 void draw() {
 
   //Dirt Plots
-  stroke(255);
+  stroke(104, 184, 37);
   fill(dirt);
   rect(125, 350, 100, 25);
   rect(325, 350, 100, 25);
   rect(525, 350, 100, 25);
+  
+  stroke(162, 209, 35);
   rect(125, 550, 100, 25);
   rect(325, 550, 100, 25);
   rect(525, 550, 100, 25);

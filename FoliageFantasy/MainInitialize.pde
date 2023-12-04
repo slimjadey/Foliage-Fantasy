@@ -29,7 +29,7 @@ void initializeObjects() {
   float plotY = 400;
   for(int i = 0; i < plotCount; i++) {
     float xPosition = (i - plotCount / 2.0) * plotSpacing;
-    FarmPlot newPlot = new FarmPlot(xPosition, plotY, plotSize);  
+    FarmPlot newPlot = new FarmPlot(xPosition, plotY, plotSize, i + 1);  
     newPlot.plantTree();
     gameDrawables.add(newPlot);
   }

@@ -28,10 +28,10 @@ public class GridVisual extends Drawable{
  // Drawable representing a tree, containing all of its visual and growing information
 public class Tree extends Drawable{
   int maxDepth = 5;
-  int age;
+  int age = 0;
 
   // Base growing stats
-  int fullyGrownAge;
+  int fullyGrownAge = 30000;
 
   // Base visual stats
   float fullyGrownAngle;
@@ -40,18 +40,15 @@ public class Tree extends Drawable{
   int branchCount;
   float angleSkew;
 
-  float lowerHue = 0;
-  float higherHue = 0;
+  float lowerHue;
+  float higherHue;
 
   // State 
-  float theta = 0;
-  float length = 0;
+  float theta;
+  float length;
 
   public Tree(float x, float y, float rotation) {
     super(x, y, rotation);
-
-    age = 0;
-    fullyGrownAge = 5000;
     randomizeBaseStats();
   }
 
@@ -138,9 +135,12 @@ public class FarmPlot extends Drawable{
 
   float size;
 
-  public FarmPlot(float x, float y, float size) {
+  int plotNumber;
+
+  public FarmPlot(float x, float y, float size, int plotNumber) {
     super(x, y, 0);
     this.size = size;
+    this.plotNumber = plotNumber;
   }
 
   public void update() {
@@ -170,6 +170,11 @@ public class FarmPlot extends Drawable{
     stroke(color(0, 0, 0, 25));
     fill(dirt);
     rect(-size / 2, -size / 2, size, size);
+
+    // Number
+    textSize(15);
+    fill(0);
+    text(plotNumber, 0, -50);
 
     // If there is a tree, draw it
     if (tree != null) {

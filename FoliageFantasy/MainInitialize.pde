@@ -16,6 +16,7 @@ void setup()
     blendMode(BLEND);
     initializeObjects();
     setupUI();
+    setupBackground();
 }
 
 void initializeObjects() {

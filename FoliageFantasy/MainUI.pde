@@ -1,7 +1,6 @@
 PImage shovel;
 PImage water;
 PImage plant;
-PImage background;
 
 color dirt;
 color buttonS;
@@ -19,7 +18,6 @@ void setupUI() {
   shovel = loadImageResource("Shovel.jpg");
   water = loadImageResource("Water.jpg");
   plant = loadImageResource("Plant.jpg");
-  background = loadImageResource("Background.png");
 }
 
 void drawUI() {

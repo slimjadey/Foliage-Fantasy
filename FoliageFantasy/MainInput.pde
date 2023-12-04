@@ -14,9 +14,7 @@ void mouseWheel(MouseEvent event) {
 }
 
 void mouseClicked() { 
-    //Add Plant Size Boundaries
   //Shovel Button Select
-  
   if (mouseX >= 650 && mouseX <= 750 && mouseY >= 75 && mouseY <= 175) {
     buttonS = color(0);
   } else {

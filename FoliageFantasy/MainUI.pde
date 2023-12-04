@@ -1,13 +1,16 @@
 PImage shovel;
 PImage water;
 PImage plant;
+PImage background;
 
 color dirt;
 color buttonS;
 color buttonW;
 color buttonP;
 
-void UISetup() {
+void setupUI() {
+  size(750, 750);
+  
   //Colors
   dirt = color(155, 118, 83);
   buttonS = color(255, 0);
@@ -18,19 +21,12 @@ void UISetup() {
   shovel = loadImageResource("Shovel.jpg");
   water = loadImageResource("Water.jpg");
   plant = loadImageResource("Plant.jpg");
+  background = loadImageResource("Background.png");
+  
+  background(background);
 }
 
 void drawUI() {
-  //Dirt Plots
-  stroke(255);
-  fill(dirt);
-  rect(125, 350, 100, 25);
-  rect(325, 350, 100, 25);
-  rect(525, 350, 100, 25);
-  rect(125, 550, 100, 25);
-  rect(325, 550, 100, 25);
-  rect(525, 550, 100, 25);
-
   //Shovel Button Creation
   strokeWeight(8);
   stroke(0);
@@ -48,5 +44,3 @@ void drawUI() {
   image(plant, 350, 25, 100, 100);
   ellipse(400, 75, 100, 100);
 }
-
-

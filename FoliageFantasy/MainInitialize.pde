@@ -12,7 +12,7 @@ void setup()
     size(800,800);
     blendMode(BLEND);
     initializeObjects();
-    UISetup();
+    setupUI();
 }
 
 void initializeObjects()

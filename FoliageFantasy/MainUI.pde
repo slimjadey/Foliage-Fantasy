@@ -8,9 +8,7 @@ color buttonS;
 color buttonW;
 color buttonP;
 
-void setupUI() {
-  size(750, 750);
-  
+void setupUI() {  
   //Colors
   dirt = color(155, 118, 83);
   buttonS = color(255, 0);
@@ -22,8 +20,6 @@ void setupUI() {
   water = loadImageResource("Water.jpg");
   plant = loadImageResource("Plant.jpg");
   background = loadImageResource("Background.png");
-  
-  background(background);
 }
 
 void drawUI() {

@@ -7,18 +7,15 @@ int currentTime = 0;
 // The time, in milliseconds, of the previous draw
 int previousTime = 0;
 
+// The time, in milliseconds, elapsed since the previous draw
+int deltaTime = 0;
+
 void setup()
 {
     size(800,800);
     blendMode(BLEND);
     initializeObjects();
     setupUI();
-}
-
-void setup() {
-  size(800, 800);
-  initializeObjects();
-  UISetup();
 }
 
 void initializeObjects() {

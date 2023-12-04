@@ -26,6 +26,10 @@ void handleUpdate() {
 
 void drawInGameObjects() {
   camera.pushCameraMatrix();
+  // Background
+  image(background, 0, 0);
+
+
   for (int i = 0; i < gameDrawables.size(); i++) {
     Drawable drawable = gameDrawables.get(i);
 

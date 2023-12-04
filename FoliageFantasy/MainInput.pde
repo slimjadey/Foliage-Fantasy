@@ -7,7 +7,7 @@ void mouseDragged() {
 void mouseWheel(MouseEvent event) {
   // Zoom in and out using scroll wheel
   float e = event.getCount();
-  camera.viewportScale = camera.viewportScale * pow(1.15, e);
+  // camera.viewportScale = camera.viewportScale * pow(1.15, e);
 }
 
 void mouseClicked() { 

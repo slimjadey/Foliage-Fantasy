@@ -40,6 +40,9 @@ public class Tree extends Drawable{
   int branchCount;
   float angleSkew;
 
+  float lowerHue = 0;
+  float higherHue = 0;
+
   // State 
   float theta = 0;
   float length = 0;
@@ -59,6 +62,8 @@ public class Tree extends Drawable{
     fullyGrownLength = (int) random(25, 200);
     sizeRatio = random(0.5f, 0.7f);
     branchCount = (int) random(2, 5);
+    lowerHue = random(0, 360);
+    higherHue = random(0, 360);
   }
 
   public void update() {
@@ -102,7 +107,7 @@ public class Tree extends Drawable{
     if (h >= 2) {
       for (int i = 0; i < branchCount; i++) {
         pushMatrix();
-        stroke(lerp(130, 220, depth / (maxDepth + 1.0)), 255, 255);
+        stroke(lerp(lowerHue, higherHue, depth / (maxDepth + 1.0)), 255, 255);
 
         // Calculate the angle of each branch
         float angle = theta / (branchCount - 1.0) * i;

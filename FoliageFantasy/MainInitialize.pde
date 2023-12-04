@@ -26,7 +26,7 @@ void initializeObjects() {
   gameDrawables.add(new GridVisual(100, 25, 0, 0));
 
   // Create plots
-  int plotCount = 10  00;
+  int plotCount = 1000;
   int plotSpacing = 400;
   int plotSize = 300;
   float plotY = 400;

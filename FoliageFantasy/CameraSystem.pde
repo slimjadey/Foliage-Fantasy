@@ -31,7 +31,7 @@ public class Camera extends Drawable {
   }
 
   public boolean isOffScreen(float drawableX) {
-    // Arbitrary value of 800 (Most drawables in the game won't be bigger than that, probably)
+    // Arbitrary value of 800 (Most drawables in the game won't be bigger than that, probablyyyyyy)
     if(abs(drawableX - x) > 800) {
       return true;
     }

@@ -1,4 +1,4 @@
-
+z
 // Simple drawable for a grid
 public class GridVisual extends Drawable{
   // Size of each grid cell
@@ -58,7 +58,7 @@ public class Tree extends Drawable{
   {
     fullyGrownAngle = random(0f, 2 * PI);
     angleSkew = random(-2 * PI, 2 * PI);
-    fullyGrownLength = (int) random(50, 250);
+    fullyGrownLength = (int) random(25, 200);
     sizeRatio = random(0.5f, 0.7f);
     branchCount = (int) random(2, 5);
     lowerHue = random(0, 360);
@@ -86,9 +86,9 @@ public class Tree extends Drawable{
     stroke(0);
     strokeWeight(1);
     // Draw the initial line
-    line(0, 0, 0, -length);
+    line(0, 0, 0, -(length * 2));
     // Move to the end of that line
-    translate(0, -length);
+    translate(0, -(length * 2));
     // Start the recursive branching!
     branch(length, 0);
     colorMode(RGB, 255);

@@ -23,6 +23,7 @@ void mouseClicked() {
   // Water Button Select
   if (mouseX >= 525 && mouseX <= 625 && mouseY >= 75 && mouseY <= 175) {
     buttonW = color(0);
+    pressButton.play();
   } else {
     buttonW = color(255, 0);
   }
@@ -30,6 +31,7 @@ void mouseClicked() {
   // Plant Button Select
   if (mouseX >= 400 && mouseX <= 500 && mouseY >= 75 && mouseY <= 175) {
     buttonP = color(0);
+    pressButton.play();
   } else {
     buttonP = color(255, 0);
   }

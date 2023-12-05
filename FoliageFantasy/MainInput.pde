@@ -13,7 +13,7 @@ void mouseWheel(MouseEvent event) {
 void mouseClicked() { 
   // Add Plant Size Boundaries
   // Shovel Button Select
-  if (mouseX >= 650 && mouseX <= 750 && mouseY >= 75 && mouseY <= 175) {
+  if (mouseX >= 600 && mouseX <= 700 && mouseY >= 25 && mouseY <= 125) {
     buttonS = color(0);
     pressButton.play();
   } else {
@@ -21,7 +21,7 @@ void mouseClicked() {
   }
 
   // Water Button Select
-  if (mouseX >= 525 && mouseX <= 625 && mouseY >= 75 && mouseY <= 175) {
+  if (mouseX >= 475 && mouseX <= 575 && mouseY >= 25 && mouseY <= 125) {
     buttonW = color(0);
     pressButton.play();
   } else {
@@ -29,7 +29,7 @@ void mouseClicked() {
   }
 
   // Plant Button Select
-  if (mouseX >= 400 && mouseX <= 500 && mouseY >= 75 && mouseY <= 175) {
+  if (mouseX >= 350 && mouseX <= 450 && mouseY >= 25 && mouseY <= 125) {
     buttonP = color(0);
     pressButton.play();
   } else {

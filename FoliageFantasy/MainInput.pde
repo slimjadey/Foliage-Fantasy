@@ -13,22 +13,34 @@ void mouseWheel(MouseEvent event) {
 void mouseClicked() { 
   // Add Plant Size Boundaries
   // Shovel Button Select
-  if (mouseX >= 650 && mouseX <= 750 && mouseY >= 75 && mouseY <= 175) {
+  if (dist(650, 75, mouseX, mouseY) < 50)/*(mouseX >= 600 && mouseX <= 700 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonS = color(0);
+    pressButton.play();
+   // if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
+      /*destory tree code*/
+    //}
   } else {
     buttonS = color(255, 0);
   }
 
   // Water Button Select
-  if (mouseX >= 525 && mouseX <= 625 && mouseY >= 75 && mouseY <= 175) {
+  if (dist(525, 75, mouseX, mouseY) < 50)/*(mouseX >= 475 && mouseX <= 575 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonW = color(0);
+    pressButton.play();
+    //if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
+      /*grow tree code*/
+   // }
   } else {
     buttonW = color(255, 0);
   }
 
   // Plant Button Select
-  if (mouseX >= 400 && mouseX <= 500 && mouseY >= 75 && mouseY <= 175) {
+  if (dist(400, 75, mouseX, mouseY) < 50)/*(mouseX >= 350 && mouseX <= 450 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonP = color(0);
+    pressButton.play();
+    //if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
+      /*plant tree code*/
+   // }
   } else {
     buttonP = color(255, 0);
   }

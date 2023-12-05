@@ -192,6 +192,16 @@ public class FarmPlot extends Drawable{
   {
     tree = null;
   }
+  
+  public boolean isMouseOnPlot() {
+    PVector worldPos = camera.screenToWorld(mouseX, mouseY);
+    if(worldPos.x > x - size / 2 && worldPos.x < x + size / 2 && worldPos.y > y - size / 2 && worldPos.y < y + size / 2)
+    {
+      return true;
+    }
+    
+    return false;
+  }
 
   public void draw() {
     // Draw the plot itself

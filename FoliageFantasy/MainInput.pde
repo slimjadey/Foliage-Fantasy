@@ -1,3 +1,5 @@
+int mode = 1; //start mode in seed
+
 void mouseDragged() {
   // Drag to pan camera
   int dx = mouseX - pmouseX;
@@ -12,36 +14,44 @@ void mouseWheel(MouseEvent event) {
 
 void mouseClicked() { 
   // Add Plant Size Boundaries
-  // Shovel Button Select
-  if (dist(650, 75, mouseX, mouseY) < 50)/*(mouseX >= 600 && mouseX <= 700 && mouseY >= 25 && mouseY <= 125)*/ {
+  // Shovel Button Select (3)
+  if (dist(900, 75, mouseX, mouseY) < 50)/*(mouseX >= 600 && mouseX <= 700 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonS = color(0);
     pressButton.play();
-   // if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
-      /*destory tree code*/
-    //}
+    mode = 3;
   } else {
     buttonS = color(255, 0);
   }
 
-  // Water Button Select
-  if (dist(525, 75, mouseX, mouseY) < 50)/*(mouseX >= 475 && mouseX <= 575 && mouseY >= 25 && mouseY <= 125)*/ {
+  // Water Button Select (2)
+  if (dist(775, 75, mouseX, mouseY) < 50)/*(mouseX >= 475 && mouseX <= 575 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonW = color(0);
     pressButton.play();
-    //if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
-      /*grow tree code*/
-   // }
+    mode = 2;
   } else {
     buttonW = color(255, 0);
   }
 
-  // Plant Button Select
-  if (dist(400, 75, mouseX, mouseY) < 50)/*(mouseX >= 350 && mouseX <= 450 && mouseY >= 25 && mouseY <= 125)*/ {
+  // Plant Button Select (1)
+  if (dist(650, 75, mouseX, mouseY) < 50)/*(mouseX >= 350 && mouseX <= 450 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonP = color(0);
     pressButton.play();
-    //if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
-      /*plant tree code*/
-   // }
+    mode = 1;
   } else {
     buttonP = color(255, 0);
   }
+  
+  //Check if you click in plot
+  for (int i = 0; i < farmPlots.size(); i++)
+  {
+    FarmPlot plot = farmPlots.get(i);
+    if (plot.isMouseOnPlot() == true)
+    {
+       plot.removeTree();
+       //if mode is 1, plot.plantTree()
+       //else if mode is 2, plot.waterTree()
+       //else if mode is 3, plot.removeTree()
+    }
+  }
+  
 }

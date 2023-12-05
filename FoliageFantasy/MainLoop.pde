@@ -61,4 +61,5 @@ void drawDebugUI() {
   PVector mouseWorldPos = camera.screenToWorld(mouseX, mouseY);
   text("mouse world position: " + mouseWorldPos.x + "," + mouseWorldPos.y, 2, 45);
   text("mouse position: " + mouseX + "," + mouseY, 2, 60);
+  text("mode: " + mode, 2, 75);
 }

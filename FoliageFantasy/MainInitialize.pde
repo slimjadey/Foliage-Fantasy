@@ -1,5 +1,6 @@
 Camera camera;
 ArrayList<Drawable> gameDrawables = new ArrayList<Drawable>();
+ArrayList<FarmPlot> farmPlots = new ArrayList<FarmPlot>();
 
 // Current time, in milliseconds, since the program started
 int currentTime = 0;
@@ -32,6 +33,8 @@ void initializeObjects() {
     float xPosition = (i - plotCount / 2.0) * plotSpacing;
     FarmPlot newPlot = new FarmPlot(xPosition, plotY, plotSize, i + 1);  
     newPlot.plantTree();
+    newPlot.waterTree();
     gameDrawables.add(newPlot);
+    farmPlots.add(newPlot);
   }
 }

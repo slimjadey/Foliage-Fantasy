@@ -33,6 +33,11 @@ public class Tree extends Drawable{
   // Base growing stats
   int fullyGrownAge = 30000;
 
+  // How long does watering the tree last?
+  float waterDuration = 10000;
+
+  color unwateredColor = color(142, 179, 64);
+
   // Base visual stats
   // It's like the "seed" that determines how the tree will look
   float fullyGrownAngle;
@@ -45,9 +50,10 @@ public class Tree extends Drawable{
   float higherHue;
 
   // State 
-  // This will change as the tree grows, and is used to determine how it looks at this point in time
   float theta;
   float length;
+  float waterTimeRemaining = 0;
+
 
   public Tree(float x, float y, float rotation) {
     super(x, y, rotation);
@@ -65,9 +71,22 @@ public class Tree extends Drawable{
     higherHue = random(0, 360);
   }
 
+  public void waterTree()
+  { 
+    waterTimeRemaining = waterDuration;
+  }
+
+  public boolean isWatered()
+  {
+    return waterTimeRemaining > 0;
+  }
+
   public void update() {
     // Update the age of the tree each frame based on time elapsed
-    age += deltaTime;
+    if(isWatered()) {
+      age += deltaTime;
+      waterTimeRemaining -= deltaTime;
+    }
 
     // Tree can't grow older than its fully grown age
     age = constrain(age, 0, fullyGrownAge);
@@ -158,6 +177,14 @@ public class FarmPlot extends Drawable{
     if(tree == null)
     {
       tree = new Tree(x, y, random(-0.1, 0.1));
+    }
+  }
+
+  public void waterTree()
+  {
+    if(tree != null)
+    {
+      tree.waterTree();
     }
   }
 

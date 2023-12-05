@@ -19,7 +19,7 @@ SoundFile growing;
 
 void setup()
 {
-    size(800,800);
+    size(750,750);
     blendMode(BLEND);
     initializeObjects();
     setupUI();

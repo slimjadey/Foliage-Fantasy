@@ -47,10 +47,21 @@ void mouseClicked() {
     FarmPlot plot = farmPlots.get(i);
     if (plot.isMouseOnPlot() == true)
     {
-       plot.removeTree();
        //if mode is 1, plot.plantTree()
+       if (mode == 1)
+       {
+         plot.plantTree();
+       }
        //else if mode is 2, plot.waterTree()
+       else if (mode == 2)
+       {
+         plot.waterTree();
+       }
        //else if mode is 3, plot.removeTree()
+       else if (mode == 3)
+       {
+         plot.removeTree();
+       }
     }
   }
   

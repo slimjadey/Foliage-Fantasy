@@ -25,16 +25,16 @@ void drawUI() {
   strokeWeight(8);
   stroke(0);
   fill(buttonS);
-  image(shovel, 600, 25, 100, 100);
-  ellipse(650, 75, 100, 100);
+  image(shovel, 850, 25, 100, 100);
+  ellipse(900, 75, 100, 100);
 
   //Water Button Creation
   fill(buttonW);
-  image(water, 470, 40, 100, 75);
-  ellipse(525, 75, 100, 100);
+  image(water, 720, 40, 100, 75);
+  ellipse(775, 75, 100, 100);
 
   //Seed Button Creation
   fill(buttonP);
-  image(plant, 350, 25, 100, 100);
-  ellipse(400, 75, 100, 100);
+  image(plant, 600, 25, 100, 100);
+  ellipse(650, 75, 100, 100);
 }

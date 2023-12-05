@@ -10,6 +10,13 @@ int previousTime = 0;
 // The time, in milliseconds, elapsed since the previous draw
 int deltaTime = 0;
 
+import processing.sound.*;
+SoundFile shovelEffect;
+SoundFile waterEffect;
+SoundFile plantGrown;
+SoundFile pressButton;
+SoundFile growing;
+
 void setup()
 {
     size(800,800);
@@ -17,6 +24,11 @@ void setup()
     initializeObjects();
     setupUI();
     setupBackground();
+    shovelEffect = new SoundFile(this, "A6-shoveldig.wav");
+    waterEffect = new SoundFile(this, "A6-waterpour.wav");
+    plantGrown = new SoundFile(this, "A6-plantgrown.wav");
+    pressButton = new SoundFile(this, "A6-buttonpress.wav");
+    growing = new SoundFile(this, "A6-growing noise_2.wav");
 }
 
 void initializeObjects() {

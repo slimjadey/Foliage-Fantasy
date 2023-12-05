@@ -15,6 +15,7 @@ void mouseClicked() {
   // Shovel Button Select
   if (mouseX >= 650 && mouseX <= 750 && mouseY >= 75 && mouseY <= 175) {
     buttonS = color(0);
+    pressButton.play();
   } else {
     buttonS = color(255, 0);
   }

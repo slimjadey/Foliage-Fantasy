@@ -17,6 +17,7 @@ SoundFile waterEffect;
 SoundFile plantGrown;
 SoundFile pressButton;
 SoundFile growing;
+SoundFile music;
 
 void setup()
 {
@@ -30,6 +31,8 @@ void setup()
     plantGrown = new SoundFile(this, "A6-plantgrown.wav");
     pressButton = new SoundFile(this, "A6-buttonpress.wav");
     growing = new SoundFile(this, "A6-growing noise_2.wav");
+    music = new SoundFile(this, "HappyMusic.mp3");
+    music.loop();
 }
 
 void initializeObjects() {

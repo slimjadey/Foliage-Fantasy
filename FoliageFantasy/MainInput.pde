@@ -51,16 +51,19 @@ void mouseClicked() {
        if (mode == 1)
        {
          plot.plantTree();
+         plantGrown.play();
        }
        //else if mode is 2, plot.waterTree()
        else if (mode == 2)
        {
          plot.waterTree();
+         waterEffect.play();
        }
        //else if mode is 3, plot.removeTree()
        else if (mode == 3)
        {
          plot.removeTree();
+         shovelEffect.play();
        }
     }
   }

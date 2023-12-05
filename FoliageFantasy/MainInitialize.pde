@@ -20,7 +20,7 @@ SoundFile growing;
 
 void setup()
 {
-    size(750,750);
+    size(1000,750);
     blendMode(BLEND);
     initializeObjects();
     setupUI();
@@ -34,7 +34,7 @@ void setup()
 
 void initializeObjects() {
   camera = new Camera(0, 0, 800, 800);
-  gameDrawables.add(new GridVisual(100, 25, 0, 0));
+  //gameDrawables.add(new GridVisual(100, 25, 0, 0));
 
   // Create plots
   int plotCount = 1000;

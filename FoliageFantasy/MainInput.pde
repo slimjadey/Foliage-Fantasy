@@ -16,9 +16,9 @@ void mouseClicked() {
   if (dist(650, 75, mouseX, mouseY) < 50)/*(mouseX >= 600 && mouseX <= 700 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonS = color(0);
     pressButton.play();
-    if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
+   // if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
       /*destory tree code*/
-    }
+    //}
   } else {
     buttonS = color(255, 0);
   }
@@ -27,9 +27,9 @@ void mouseClicked() {
   if (dist(525, 75, mouseX, mouseY) < 50)/*(mouseX >= 475 && mouseX <= 575 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonW = color(0);
     pressButton.play();
-    if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
+    //if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
       /*grow tree code*/
-    }
+   // }
   } else {
     buttonW = color(255, 0);
   }
@@ -38,9 +38,9 @@ void mouseClicked() {
   if (dist(400, 75, mouseX, mouseY) < 50)/*(mouseX >= 350 && mouseX <= 450 && mouseY >= 25 && mouseY <= 125)*/ {
     buttonP = color(0);
     pressButton.play();
-    if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
+    //if (dist(/*plot max x*/, /*plot max y*/, mouseX, mouseY) < 50) {
       /*plant tree code*/
-    }
+   // }
   } else {
     buttonP = color(255, 0);
   }

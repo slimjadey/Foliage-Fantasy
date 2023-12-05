@@ -15,9 +15,9 @@ void setupUI() {
   buttonP = color(255, 0);
 
   //Images
-  shovel = loadImageResource("Shovel.jpg");
-  water = loadImageResource("Water.jpg");
-  plant = loadImageResource("Plant.jpg");
+  shovel = loadImageResource("Shovel.png");
+  water = loadImageResource("Water.png");
+  plant = loadImageResource("Plant.png");
 }
 
 void drawUI() {

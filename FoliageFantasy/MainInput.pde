@@ -54,7 +54,7 @@ void mouseClicked() {
          plantGrown.play();
 
          //indicator for plants to be watered
-         for (int i = 0; i < 5; i++) {
+         for (int g = 0; g < 5; g++) {
            color seeds = color(137, 207, 240);
            fill(seeds);
            ellipse(random(0, 300), random(0, 300), 10, 10);

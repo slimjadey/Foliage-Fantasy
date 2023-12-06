@@ -4,6 +4,9 @@ void mouseDragged() {
   // Drag to pan camera
   int dx = mouseX - pmouseX;
   camera.x -= dx * camera.viewportScale;
+  
+  // Keep the camera within the plots
+  camera.x = constrain(camera.x, 0, (plotCount - 1) * plotSpacing);
 }
 
 void mouseWheel(MouseEvent event) {
@@ -16,29 +19,20 @@ void mouseClicked() {
   // Add Plant Size Boundaries
   // Shovel Button Select (3)
   if (dist(900, 75, mouseX, mouseY) < 50)/*(mouseX >= 600 && mouseX <= 700 && mouseY >= 25 && mouseY <= 125)*/ {
-    buttonS = color(0);
     pressButton.play();
     mode = 3;
-  } else {
-    buttonS = color(255, 0);
-  }
+  } 
 
   // Water Button Select (2)
   if (dist(775, 75, mouseX, mouseY) < 50)/*(mouseX >= 475 && mouseX <= 575 && mouseY >= 25 && mouseY <= 125)*/ {
-    buttonW = color(0);
     pressButton.play();
     mode = 2;
-  } else {
-    buttonW = color(255, 0);
   }
 
   // Plant Button Select (1)
   if (dist(650, 75, mouseX, mouseY) < 50)/*(mouseX >= 350 && mouseX <= 450 && mouseY >= 25 && mouseY <= 125)*/ {
-    buttonP = color(0);
     pressButton.play();
     mode = 1;
-  } else {
-    buttonP = color(255, 0);
   }
   
   //Check if you click in plot

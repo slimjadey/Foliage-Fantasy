@@ -31,10 +31,10 @@ public class Tree extends Drawable{
   int age = 0;
 
   // Base growing stats
-  int fullyGrownAge = 30000;
+  int fullyGrownAge;
 
   // How long does watering the tree last?
-  float waterDuration = 10000;
+  float waterDuration;
 
   color unwateredColor = color(142, 179, 64);
 
@@ -58,17 +58,25 @@ public class Tree extends Drawable{
   public Tree(float x, float y, float rotation) {
     super(x, y, rotation);
     randomizeBaseStats();
+
+    // Start a little bit grown
+    age = (int)(0.1 * fullyGrownAge);
   }
 
   private void randomizeBaseStats()
   {
+    // Aging
+    fullyGrownAge = (int)random(20000, 60000);
+    waterDuration = (int)random(10000, 20000);
+
+    // Visuals
     fullyGrownAngle = random(0f, 2 * PI);
     angleSkew = random(-2 * PI, 2 * PI);
     fullyGrownLength = (int) random(50, 250);
     sizeRatio = random(0.5f, 0.7f);
     branchCount = (int) random(2, 5);
-    lowerHue = random(0, 360);
-    higherHue = random(0, 360);
+    lowerHue = random(100, 360);
+    higherHue = random(100, 360);
   }
 
   public void waterTree()
@@ -191,6 +199,7 @@ public class FarmPlot extends Drawable{
   public void removeTree()
   {
     tree = null;
+    tree.waterTimeRemaining = 0;
   }
   
   public boolean isMouseOnPlot() {
@@ -207,7 +216,12 @@ public class FarmPlot extends Drawable{
     // Draw the plot itself
     strokeWeight(1);
     stroke(color(0, 0, 0, 25));
-    fill(dirt);
+    if(tree != null && tree.isWatered()) {
+      fill(wateredDirt);
+    }
+    else {
+      fill(dirt);
+    }
     rect(-size / 2, -size / 2, size, size);
 
     // Draw plot number

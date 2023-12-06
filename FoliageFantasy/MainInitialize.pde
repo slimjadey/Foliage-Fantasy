@@ -21,10 +21,16 @@ SoundFile music;
 
 float volume = .5;
 
+int plotCount = 25;
+int plotSpacing = 500;
+int plotSize = 300;
+float plotY = 300;
+
 void setup()
 {
     size(1000,750);
     blendMode(BLEND);
+    frameRate(45);
     initializeObjects();
     setupUI();
     setupBackground();
@@ -39,19 +45,18 @@ void setup()
 }
 
 void initializeObjects() {
-  camera = new Camera(0, 0, 800, 800);
+  camera = new Camera(0, 0, width, height);
   //gameDrawables.add(new GridVisual(100, 25, 0, 0));
 
   // Create plots
-  int plotCount = 1000;
-  int plotSpacing = 400;
-  int plotSize = 300;
-  float plotY = 400;
   for(int i = 0; i < plotCount; i++) {
-    float xPosition = (i - plotCount / 2.0) * plotSpacing;
-    FarmPlot newPlot = new FarmPlot(xPosition, plotY, plotSize, i + 1);  
-    newPlot.plantTree();
-    newPlot.waterTree();
+    float xPosition = i * plotSpacing;
+    
+    // Add some variation in the positioning to make it seem more organic
+    float noiseFrequency = 0.025;
+    float yVariation = noise(xPosition * noiseFrequency) * 100;
+    
+    FarmPlot newPlot = new FarmPlot(xPosition, plotY + yVariation, plotSize, i + 1);  
     gameDrawables.add(newPlot);
     farmPlots.add(newPlot);
   }

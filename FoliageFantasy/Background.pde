@@ -7,7 +7,7 @@ public void setupBackground()
 
 public void drawBackground()
 {
-    float x = -camera.x * .4;
+    float x = -camera.x * .3;
     x %= background.width;
     image(background, x, 0);
     image(background, x + background.width, 0);

@@ -17,6 +17,7 @@ void draw() {
   drawDebugUI();
 
   previousTime = currentTime;
+  
 }
 
 void handleUpdate() {

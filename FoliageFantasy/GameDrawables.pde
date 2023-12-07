@@ -63,7 +63,6 @@ public class Tree extends Drawable{
   float theta;
   float length;
   float waterTimeRemaining = 0;
-  boolean isFrozen = false;
 
 
   public Tree(float x, float y, float rotation) {
@@ -98,16 +97,12 @@ public class Tree extends Drawable{
   }
   
   public boolean isDoneGrowing(){
-    return age >= fullyGrownAge || isFrozen;
-  }
-  
-  public void freezeTree() {
-    isFrozen = true;
+    return age >= fullyGrownAge;
   }
 
   public void update() {
     // Update the age of the tree each frame based on time elapsed
-    if(isWatered() && !isFrozen) {
+    if(isWatered()) {
       age += deltaTime;
       waterTimeRemaining -= deltaTime;
     }
@@ -202,13 +197,6 @@ public class FarmPlot extends Drawable{
     if(tree == null)
     {
       tree = new Tree(x, y, random(-0.1, 0.1));
-    }
-  }
-  
-  public void freezeTree() 
-  {
-    if(tree != null) {
-      tree.freezeTree();
     }
   }
 

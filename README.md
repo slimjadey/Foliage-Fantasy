@@ -14,5 +14,11 @@ There are three buttons the player can use. The first one being a Seed Button, i
 Roles:
 Janely N. M.- my role for this project was creating the background design and editing images for the project. I created the background in layers in order for the parallax effect to work effectively. I also had to create the background with the right size and pixels.
 
+<<<<<<< HEAD
 Jade Inderbitzen- I input the sound into the game; the button, shovel, water, and seed effect. I also found the background music online and implemented that too. I helped finalize the water particles as well as the parallax effect on the background. I also created the different modes for the buttons did what they were supposed to do when selected. My role was to finalize things and make sure they are complete and "perfect". (https://www.free-stock-music.com/fsm-team-happy-days.html)
  
+=======
+Jade Inderbitzen- I input the sound into the game; the button, shovel, water, and seed effect. I also found the background music online and implemented that too. I helped finalize the water particles as well as the parallax effect on the background. My role was to finalize things and make sure they are complete and "perfect". (https://www.free-stock-music.com/fsm-team-happy-days.html)
+
+Brendan Taubert- I designed the sound effects you hear in game from start to finish using various textures I sampled, recorded, or synthesized and processed them accordingly. Then I equalized the levels of the different sounds so they are all approximately the same volume in game.
+>>>>>>> ff8b76325a08199ee8d9022b8886d65266772e79

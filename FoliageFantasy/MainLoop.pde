@@ -29,7 +29,7 @@ void handleUpdate() {
 
 void drawInGameObjects() {  
   camera.pushCameraMatrix();
-
+  
   for (int i = 0; i < gameDrawables.size(); i++) {
     Drawable drawable = gameDrawables.get(i);
 
@@ -50,6 +50,8 @@ void drawInGameObjects() {
 
     popMatrix();
   }
+  
+  ground.draw();
   camera.popCameraMatrix();
 }
 

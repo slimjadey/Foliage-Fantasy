@@ -1,27 +1,37 @@
 
-// Simple drawable for a grid
-public class GridVisual extends Drawable{
-  // Size of each grid cell
-  float cellSize = 0;
+// Simple drawable for the ground
+public class Ground extends Drawable {
+  PShape groundShape;
+  
+  int segments = 100;
+  
+  float freq = 0.00125;
+  float amplitude = 150;
 
-  // The number of cells to draw in each direction
-  int count;
-
-  public GridVisual(float cellSize, int count, float x, float y) {
-    super(x, y, 0);
-    this.cellSize = cellSize;
-    this.count = count;
+  public Ground(float defaultY, int leftBound, int rightBound) {
+    super(0, 0, 0);
+    groundShape = createShape();
+    groundShape.beginShape();
+    groundShape.fill(wateredDirt);
+    groundShape.strokeWeight(0);
+    groundShape.stroke(0,0);
+    
+    // Add some bumpiness to the ground using noise
+    for(int i = 0;i <= segments;i++) {
+      float pos = lerp(leftBound, rightBound, i / (float)segments);
+      groundShape.vertex(pos, defaultY - getGroundHeight(pos));
+    }
+    groundShape.vertex(rightBound, height);
+    groundShape.vertex(leftBound, height);
+    groundShape.endShape(CLOSE);
+  }
+  
+  public float getGroundHeight(float pos) {
+    return noise(pos * freq) * amplitude;
   }
 
   public void draw() {
-    strokeWeight(1);
-    stroke(color(0, 0, 0, 25));
-    for (int column = -count; column < count; column++) {
-      line(column * cellSize, -count * cellSize, column * cellSize, count * cellSize);
-    }
-    for (int row = -count; row < count; row++) {
-      line(-count * cellSize, row * cellSize, count * cellSize, row * cellSize);
-    }
+    shape(groundShape);
   }
 }
 
@@ -109,8 +119,7 @@ public class Tree extends Drawable{
 
   public void draw() {
     colorMode(HSB, 360);
-    fill(0);
-    stroke(0);
+    stroke(lowerHue);
     strokeWeight(1);
     // Draw the initial line
     line(0, 0, 0, -length);
@@ -213,20 +222,19 @@ public class FarmPlot extends Drawable{
 
   public void draw() {
     // Draw the plot itself
-    strokeWeight(1);
-    stroke(color(0, 0, 0, 25));
+    strokeWeight(0);
     if(tree != null && tree.isWatered()) {
       fill(wateredDirt);
     }
     else {
       fill(dirt);
     }
-    rect(-size / 2, -size / 2, size, size);
+    ellipse(0, -size * 0.125, size, size * 0.75);
 
     // Draw plot number
-    textSize(15);
-    fill(0);
-    text(plotNumber, 0, -50);
+    //textSize(15);
+    //fill(0);
+    //text(plotNumber, 0, -50);
 
     // If there is a tree in the plot, draw it
     if (tree != null) {

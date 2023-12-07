@@ -47,18 +47,19 @@ void mouseClicked() {
          plot.plantTree();
          plantGrown.play();
 
-         //indicator for plants to be watered
-         for (int g = 0; g < 5; g++) {
-           color seeds = color(137, 207, 240);
-           fill(seeds);
-           ellipse(random(0, 300), random(0, 300), 10, 10);
-         }
        }
        //else if mode is 2, plot.waterTree()
        else if (mode == 2)
        {
          plot.waterTree();
          waterEffect.play();
+         
+          //indicator for plants to be watered
+         for (int g = 0; g < 5; g++) {
+           color seeds = color(72, 164, 250);
+           fill(seeds);
+           ellipse(random(mouseX-50, mouseX+50), random(mouseY-50, mouseY+50), 10, 10);
+         }
        }
        //else if mode is 3, plot.removeTree()
        else if (mode == 3)

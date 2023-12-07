@@ -1,6 +1,6 @@
 # Foliage-Fantasy
 
-Code for Assignment 6 of CDM 012 class.
+Code for Assignment 6 of CDM 012 class created by Jade Inderbitzen, Janely N. M., Arthur Gan, Brendan Taubert, and Danny Gu.
 
 This game requires the processing audio library. Install through
 Sketch > Import Libraries > Manage Libraries > Search for "Sound"

@@ -19,3 +19,5 @@ Jade Inderbitzen- I input the sound into the game; the button, shovel, water, an
 Brendan Taubert- I designed the sound effects you hear in game from start to finish using various textures I sampled, recorded, or synthesized and processed them accordingly. Then I equalized the levels of the different sounds so they are all approximately the same volume in game.
 
 Arthur Gan - I adapted the recursive tree sample from https://processing.org/examples/tree.html to have have a more random appearance, including size, angle, and color. I also made modifications so that it would "grow" over time.
+
+Danny Gu - I designed the user interface along with the button functionnalities based on mouseX and mouseY coordinate parameters.

@@ -41,21 +41,25 @@ void drawUI() {
   image(plant, 600, 25, 100, 100);
   
   // Highlight the button of the currently selected tool
+  // Replace the cursor with the currently selected tool
   if(mode == 3) {
     buttonS = color(186, 126, 69, 255);
+    cursor(shovel, 50, 50);
   } else {
-    buttonS = color(200, 200, 125);
+    buttonS = color(225);
   }
   
   if(mode == 2) {
     buttonW = color(104, 224, 242);
+    cursor(water, 50, 37);
   } else {
-    buttonW = color(200, 200, 125);
+    buttonW = color(225);
   }
   
   if(mode == 1) {
     buttonP = color(104, 242, 106);
+    cursor(plant, 50, 50);
   } else {
-    buttonP = color(200, 200, 125);
+    buttonP = color(225);
   }
 }

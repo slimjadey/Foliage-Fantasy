@@ -18,9 +18,9 @@ public void setupBackground()
 public void drawBackground()
 {
     float x = -camera.x * .2;
-    float a = -camera.x * .4;
-    float b = -camera.x * .6;
-    float c = -camera.x * .8;
+    float a = -camera.x * .2;
+    float b = -camera.x * .3;
+    float c = -camera.x * .5;
     float d = -camera.x * .9;
     
     x %= scarecrows.width / 2;
@@ -37,20 +37,20 @@ public void drawBackground()
     image(scarecrows, x + scarecrows.width, 0);
     image(scarecrows, x - scarecrows.width, 0);
     
-    image(topgrass, a, 0);
-    image(topgrass, a + topgrass.width, 0);
-    image(topgrass, a - topgrass.width, 0);
+    image(topgrass, a, 150);
+    image(topgrass, a + topgrass.width, 150);
+    image(topgrass, a - topgrass.width, 150);
     
-    image(middlegrass, b, 0);
-    image(middlegrass, b + middlegrass.width, 0);
-    image(middlegrass, b - middlegrass.width, 0);
+    image(middlegrass, b, 200);
+    image(middlegrass, b + middlegrass.width, 200);
+    image(middlegrass, b - middlegrass.width, 200);
     
-    image(secondbottom, c, 0);
-    image(secondbottom, c + secondbottom.width, 0);
-    image(secondbottom, c - secondbottom.width, 0);
+    image(secondbottom, c, 350);
+    image(secondbottom, c + secondbottom.width, 350);
+    image(secondbottom, c - secondbottom.width, 350);
     
-    image(bottom, d, 0);
-    image(bottom, d + bottom.width, 0);
-    image(bottom, d - bottom.width, 0);
+    image(bottom, d, 500);
+    image(bottom, d + bottom.width, 500);
+    image(bottom, d - bottom.width, 500);
     
 }

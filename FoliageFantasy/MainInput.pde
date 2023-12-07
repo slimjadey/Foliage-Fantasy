@@ -54,8 +54,9 @@ void mouseClicked() {
          waterEffect.play();
          
           //indicator for plants to be watered
-         for (int g = 0; g < 5; g++) {
+         for (int g = 0; g < 10; g++) {
            color seeds = color(72, 164, 250);
+           strokeWeight(0);
            fill(seeds);
            ellipse(random(mouseX-50, mouseX+50), random(mouseY-50, mouseY+50), 10, 10);
          }

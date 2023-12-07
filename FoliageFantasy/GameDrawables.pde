@@ -14,7 +14,7 @@ public class Ground extends Drawable {
     groundShape.beginShape();
     groundShape.fill(wateredDirt);
     groundShape.strokeWeight(5);
-    groundShape.stroke(162, 209, 35);
+    groundShape.stroke(104, 185, 32);
     
     // Add some bumpiness to the ground using noise
     for(int i = 0;i <= segments;i++) {

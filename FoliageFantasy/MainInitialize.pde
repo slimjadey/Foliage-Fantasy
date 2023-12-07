@@ -27,8 +27,6 @@ color doneGrowingDirt;
 void setup()
 {
     size(1000,750);
-    blendMode(BLEND);
-    frameRate(45);
     setupUI();
     setupBackground();
     initializeObjects();

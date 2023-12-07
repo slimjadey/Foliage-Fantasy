@@ -1,4 +1,3 @@
-//PImage background;
 PImage scarecrows;
 PImage topgrass;
 PImage middlegrass;
@@ -7,7 +6,7 @@ PImage bottom;
 
 public void setupBackground()
 {
-  //background = loadImageResource("Background.png");
+  //Create variables for the images
   scarecrows = loadImageResource("1scarecrows.png");
   topgrass = loadImageResource("2top_grass.png");
   middlegrass = loadImageResource("3second_top_grass.png");
@@ -15,9 +14,11 @@ public void setupBackground()
   bottom = loadImageResource("5second_bottom.png");
 }
 
+//Parallax background in which different layers "pictures" are loaded in and move at different speeds
 public void drawBackground()
 {
-    float x = -camera.x * .2;
+    //variables for x position of images to move at different speeds based on camera position
+    float x = -camera.x * .2; 
     float a = -camera.x * .2;
     float b = -camera.x * .3;
     float c = -camera.x * .5;
@@ -29,10 +30,7 @@ public void drawBackground()
     c %= secondbottom.width / 3;
     d %= bottom.width / 3;
     
-    //image(background, x, 0);
-    //image(background, x + background.width, 0);
-    //image(background, x - background.width, 0);
-    
+    //So the images cover all of movable background
     image(scarecrows, x, 0);
     
     image(topgrass, a, 150);

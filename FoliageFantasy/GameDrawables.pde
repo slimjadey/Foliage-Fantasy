@@ -13,8 +13,8 @@ public class Ground extends Drawable {
     groundShape = createShape();
     groundShape.beginShape();
     groundShape.fill(wateredDirt);
-    groundShape.strokeWeight(0);
-    groundShape.stroke(0,0);
+    groundShape.strokeWeight(5);
+    groundShape.stroke(162, 209, 35);
     
     // Add some bumpiness to the ground using noise
     for(int i = 0;i <= segments;i++) {
@@ -63,6 +63,7 @@ public class Tree extends Drawable{
   float theta;
   float length;
   float waterTimeRemaining = 0;
+  boolean isFrozen = false;
 
 
   public Tree(float x, float y, float rotation) {
@@ -73,8 +74,7 @@ public class Tree extends Drawable{
     age = (int)(0.1 * fullyGrownAge);
   }
 
-  private void randomizeBaseStats()
-  {
+  private void randomizeBaseStats(){
     // Aging
     fullyGrownAge = (int)random(20000, 60000);
     waterDuration = (int)random(10000, 20000);
@@ -89,19 +89,25 @@ public class Tree extends Drawable{
     higherHue = random(100, 360);
   }
 
-  public void waterTree()
-  { 
+  public void waterTree() { 
     waterTimeRemaining = waterDuration;
   }
 
-  public boolean isWatered()
-  {
+  public boolean isWatered() {
     return waterTimeRemaining > 0;
+  }
+  
+  public boolean isDoneGrowing(){
+    return age >= fullyGrownAge || isFrozen;
+  }
+  
+  public void freezeTree() {
+    isFrozen = true;
   }
 
   public void update() {
     // Update the age of the tree each frame based on time elapsed
-    if(isWatered()) {
+    if(isWatered() && !isFrozen) {
       age += deltaTime;
       waterTimeRemaining -= deltaTime;
     }
@@ -119,12 +125,13 @@ public class Tree extends Drawable{
 
   public void draw() {
     colorMode(HSB, 360);
-    stroke(lowerHue);
-    strokeWeight(1);
+    stroke(lowerHue, 255, 255);
+    strokeWeight(2);
     // Draw the initial line
     line(0, 0, 0, -length);
     // Move to the end of that line
     translate(0, -length);
+    strokeWeight(1);
     // Start the recursive branching!
     branch(length, 0);
     colorMode(RGB, 255);
@@ -143,6 +150,7 @@ public class Tree extends Drawable{
       for (int i = 0; i < branchCount; i++) {
         pushMatrix();
         stroke(lerp(lowerHue, higherHue, depth / (maxDepth + 1.0)), 255, 255);
+        strokeWeight(0.5 + (maxDepth - depth) / (float)maxDepth);
 
         // Calculate the angle of each branch
         float angle = theta / (branchCount - 1.0) * i;
@@ -196,6 +204,13 @@ public class FarmPlot extends Drawable{
       tree = new Tree(x, y, random(-0.1, 0.1));
     }
   }
+  
+  public void freezeTree() 
+  {
+    if(tree != null) {
+      tree.freezeTree();
+    }
+  }
 
   public void waterTree()
   {
@@ -223,11 +238,14 @@ public class FarmPlot extends Drawable{
   public void draw() {
     // Draw the plot itself
     strokeWeight(0);
-    if(tree != null && tree.isWatered()) {
-      fill(wateredDirt);
-    }
-    else {
-      fill(dirt);
+    fill(dirt);
+    if(tree != null) {
+      if (tree.isDoneGrowing()) {
+        fill(doneGrowingDirt);
+      }
+      else if(tree.isWatered()){
+        fill(wateredDirt);
+      }
     }
     ellipse(0, -size * 0.125, size, size * 0.75);
 

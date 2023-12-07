@@ -2,8 +2,6 @@ PImage shovel;
 PImage water;
 PImage plant;
 
-color dirt;
-color wateredDirt;
 color buttonS;
 color buttonW;
 color buttonP;
@@ -12,6 +10,7 @@ void setupUI() {
   //Colors
   dirt = color(155, 118, 83);
   wateredDirt = color(97, 70, 40);
+  doneGrowingDirt = color(66, 35, 30);
   buttonS = color(255, 0);
   buttonW = color(255, 0);
   buttonP = color(255, 0);

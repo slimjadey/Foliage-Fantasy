@@ -25,9 +25,13 @@ SoundFile music;
 float volume = .5;
 
 int plotCount = 20;
-int plotSpacing = 500;
+int plotSpacing = 550;
 int plotSize = 300;
 float plotY = 300;
+
+color dirt;
+color wateredDirt;
+color doneGrowingDirt;
 
 void setup()
 {
@@ -37,6 +41,7 @@ void setup()
     setupUI();
     setupBackground();
     initializeObjects();
+    
     shovelEffect = new SoundFile(this, "A6-shoveldig.wav");
     waterEffect = new SoundFile(this, "A6-waterpour.wav");
     plantGrown = new SoundFile(this, "A6-plantgrown.wav");

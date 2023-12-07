@@ -46,7 +46,6 @@ void mouseClicked() {
        {
          plot.plantTree();
          plantGrown.play();
-
        }
        //else if mode is 2, plot.waterTree()
        else if (mode == 2)

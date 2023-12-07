@@ -199,7 +199,6 @@ public class FarmPlot extends Drawable{
   public void removeTree()
   {
     tree = null;
-    tree.waterTimeRemaining = 0;
   }
   
   public boolean isMouseOnPlot() {

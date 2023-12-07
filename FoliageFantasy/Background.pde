@@ -23,34 +23,24 @@ public void drawBackground()
     float c = -camera.x * .5;
     float d = -camera.x * .9;
     
-    x %= scarecrows.width / 2;
-    a %= topgrass.width / 2;
-    b %= middlegrass.width / 2;
-    c %= secondbottom.width / 2;
-    d %= bottom.width / 2;
+    x %= scarecrows.width / 3;
+    a %= topgrass.width / 3;
+    b %= middlegrass.width / 3;
+    c %= secondbottom.width / 3;
+    d %= bottom.width / 3;
     
     //image(background, x, 0);
     //image(background, x + background.width, 0);
     //image(background, x - background.width, 0);
     
     image(scarecrows, x, 0);
-    image(scarecrows, x + scarecrows.width, 0);
-    image(scarecrows, x - scarecrows.width, 0);
     
     image(topgrass, a, 150);
-    image(topgrass, a + topgrass.width, 150);
-    image(topgrass, a - topgrass.width, 150);
     
     image(middlegrass, b, 200);
-    image(middlegrass, b + middlegrass.width, 200);
-    image(middlegrass, b - middlegrass.width, 200);
     
     image(secondbottom, c, 350);
-    image(secondbottom, c + secondbottom.width, 350);
-    image(secondbottom, c - secondbottom.width, 350);
     
     image(bottom, d, 500);
-    image(bottom, d + bottom.width, 500);
-    image(bottom, d - bottom.width, 500);
     
 }
